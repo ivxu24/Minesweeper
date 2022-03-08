@@ -32,7 +32,7 @@ public void setMines()
       if (mines.contains(buttons[r][c]) == false)  // checks if button at random row & col is in mines
       {
     mines.add(buttons[r][c]);
-    System.out.println(r + "," + c);
+   // System.out.println(r + "," + c);
      }
     }
 }
