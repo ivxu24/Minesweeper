@@ -75,8 +75,8 @@ public void displayLosingMessage()
   }
       }
 } */
-    for(int i = 0; i < bombs.size(); i++)
-        bombs.get(i).mousePressed();
+    for(int i = 0; i < mines.size(); i++)
+        mines.get(i).mousePressed();
     fill(255);
     for(int r = 0; r < NUM_ROWS; r++)
         for(int c = 0; c < NUM_COLS; c++)
