@@ -31,7 +31,7 @@ public void setMines()
       if (mines.contains(buttons[r][c]) == false)  // checks if button at random row & col is in mines
       {
     mines.add(buttons[r][c]);
-    System.out.println(r + "," + c);
+   // System.out.println(r + "," + c);
      }
     }
 }
@@ -44,16 +44,20 @@ public void draw ()
 public boolean isWon()
 {
     //your code here
-  for (int r = 0; r < NUM_ROWS; r++)
-  for (int c = 0; c < NUM_COLS; c++)
-  if (!buttons[r][c].clicked == true && !mines.contains(buttons[r][c]))
-    return false;
-    return true;
+     for(int i = 0; i < mines.size(); i++)
+        if(!mines.get(i).isFlagged())
+            return false;
+    for(int r = 0; r < NUM_ROWS; r++)
+        for(int c = 0; c < NUM_COLS; c++)
+            if(!mines.contains(buttons[r][c]))
+                if(!buttons[r][c].isClicked())
+                    return false;
+    return true;   
 }
 public void displayLosingMessage()
 {
     //your code here
-    for (int r = 0; r < NUM_ROWS; r++){
+ */   for (int r = 0; r < NUM_ROWS; r++){
   for (int c = 0; c < NUM_COLS; c++){
      if( !buttons[r][c].clicked && mines.contains(buttons[r][c])){
      buttons[r][c].flagged = false;
@@ -70,10 +74,27 @@ public void displayLosingMessage()
      }
   }
       }
+} /*
+    for(int i = 0; i < bombs.size(); i++)
+        bombs.get(i).mousePressed();
+    fill(255);
+    for(int r = 0; r < NUM_ROWS; r++)
+        for(int c = 0; c < NUM_COLS; c++)
+        {
+            buttons[r][c].setLabel("");
+            buttons[r][c].setColr(0, 0, 0);
+        }
+    buttons[4][1].setLabel("Y");
+    buttons[4][2].setLabel("O");
+    buttons[4][3].setLabel("U");
+    buttons[4][5].setLabel("L");
+    buttons[4][6].setLabel("O");
+    buttons[4][7].setLabel("S");
+    buttons[4][8].setLabel("E");
 }
-
 public void displayWinningMessage()
 {
+/*
       buttons[0][0].setLabel("Y");
        buttons[0][1].setLabel("O");
         buttons[0][2].setLabel("U");
@@ -82,6 +103,21 @@ public void displayWinningMessage()
            buttons[0][5].setLabel("O");
             buttons[0][6].setLabel("N");
              buttons[0][7].setLabel(":D");
+            /*
+        for(int r = 0; r < NUM_ROWS; r++)
+        for(int c = 0; c < NUM_COLS; c++)
+        {
+            buttons[r][c].setLabel("");
+            buttons[r][c].setColr(255, 255, 0);
+        }
+    buttons[4][1].setLabel("C");
+    buttons[4][2].setLabel("O");
+    buttons[4][3].setLabel("N");
+    buttons[4][4].setLabel("G");
+    buttons[4][5].setLabel("R");
+    buttons[4][6].setLabel("A");
+    buttons[4][7].setLabel("T");
+    buttons[4][8].setLabel("S");
 
 }
 public boolean isValid(int r, int c)
