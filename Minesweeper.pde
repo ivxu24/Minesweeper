@@ -183,17 +183,17 @@ public class MSButton
         //your code here
         if(mouseButton == RIGHT)
         {
-            if(marked == false)
-                marked = true;
+            if(flagged == false)
+                flagged = true;
             else
             {
                 clicked = false;
-                marked = false;
+                flagged = false;
             }
         }
-        else if(!bombs.contains(buttons[r][c]) && countBombs(r, c) > 0)
+        else if(!mines.contains(buttons[r][c]) && countMines(r, c) > 0)
         {
-            setLabel(""+countBombs(r, c));
+            setLabel(""+countMines(r, c));
         }
         else
         {
