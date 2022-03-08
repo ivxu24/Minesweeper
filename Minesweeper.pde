@@ -57,7 +57,7 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     //your code here
- */   for (int r = 0; r < NUM_ROWS; r++){
+ /*   for (int r = 0; r < NUM_ROWS; r++){
   for (int c = 0; c < NUM_COLS; c++){
      if( !buttons[r][c].clicked && mines.contains(buttons[r][c])){
      buttons[r][c].flagged = false;
