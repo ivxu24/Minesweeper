@@ -103,7 +103,7 @@ public void displayWinningMessage()
            buttons[0][5].setLabel("O");
             buttons[0][6].setLabel("N");
              buttons[0][7].setLabel(":D");
-            /*
+            */
         for(int r = 0; r < NUM_ROWS; r++)
         for(int c = 0; c < NUM_COLS; c++)
         {
