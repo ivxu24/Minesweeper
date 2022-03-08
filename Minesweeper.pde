@@ -163,7 +163,7 @@ public class MSButton
     // called by manager
     public void mousePressed ()
     {
-        clicked = true;
+        */ clicked = true;
         //your code here
         if (mouseButton == RIGHT )
         flagged = !flagged;
@@ -178,6 +178,34 @@ public class MSButton
     for (int c = myCol-1; c<=myCol + 1; c++)
         if(isValid(r,c-1) && !buttons[r][c-1].clicked)
         buttons[r][c].mousePressed();
+       /*
+             clicked = true;
+        //your code here
+        if(mouseButton == RIGHT)
+        {
+            if(marked == false)
+                marked = true;
+            else
+            {
+                clicked = false;
+                marked = false;
+            }
+        }
+        else if(!bombs.contains(buttons[r][c]) && countBombs(r, c) > 0)
+        {
+            setLabel(""+countBombs(r, c));
+        }
+        else
+        {
+            if(isValid(r-1, c) && !buttons[r-1][c].isClicked())
+                buttons[r-1][c].mousePressed();
+            if(isValid(r, c-1) && !buttons[r][c-1].isClicked())
+                buttons[r][c-1].mousePressed();
+            if(isValid(r, c+1) && !buttons[r][c+1].isClicked())
+                buttons[r][c+1].mousePressed();
+            if(isValid(r+1, c) && !buttons[r+1][c].isClicked())
+                buttons[r+1][c].mousePressed();
+               }
        
     }
    
