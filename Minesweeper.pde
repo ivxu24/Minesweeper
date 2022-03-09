@@ -1,7 +1,7 @@
 //display losing & winning message
 import de.bezier.guido.*;
-private final static int NUM_ROWS = 5;
-private final static int NUM_COLS = 5;
+private final static int NUM_ROWS = 10;
+private final static int NUM_COLS = 10;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines = new ArrayList (); //ArrayList of just the minesweeper buttons that are mined
 
@@ -33,9 +33,24 @@ void setup ()
 
 public void draw ()
 {
-    background( 0 );
-    if(isWon() == true)
-        displayWinningMessage();
+ background( 0 );
+ if(isWon() == true)
+ {
+ displayWinningMessage();
+ noLoop();
+ }
+ else if(isLost() == true)
+ {
+ displayLosingMessage();
+ noLoop();
+ }
+}
+public boolean isLost()
+{
+ for(int i = 0; i < mines.size(); i++)
+ if(mines.get(i).isClicked() && !mines.get(i).isFlagged())
+ return true;
+ return false;
 }
 public boolean isWon()
 {
