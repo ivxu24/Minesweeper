@@ -20,8 +20,11 @@ void setup ()
   for ( int c = 0; c < NUM_COLS; c++)
     buttons[r][c] = new MSButton(r,c);
    
+    for (int i = 0; i < NUM_ROWS.2); i++) {
     setMines();
+    }
 }
+
 public void setMines()
 {
     //your code
