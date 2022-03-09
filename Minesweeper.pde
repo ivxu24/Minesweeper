@@ -58,7 +58,7 @@ public boolean isWon()
     return true;   
     */
 }
-public void displayLosingMessage()
+/*public void displayLosingMessage()
 {
     for(int i = 0; i < mines.size(); i++)
         mines.get(i).mousePressed();
@@ -95,6 +95,36 @@ public void displayWinningMessage()
     buttons[4][7].setLabel("!");
 
 
+}
+*/
+
+public void displayLosingMessage()
+{
+    for (int i = 0; i < mines.size(); i++) {
+      if (!mines.get(i).flagged)
+        mines.get(i).clicked = true;
+    }
+    //your code here
+    String[][] lose = { {"Y", "O", "U"}, {"L", "O", "S", "E"} };
+    for (int i = 0; i < lose.length; i++) {
+      for (int j = 0; j < lose[i].length; j++) {
+        buttons[i][j].clicked = false;
+        buttons[i][j].flagged = false;
+        buttons[i][j].myLabel = m[i][j];
+      }
+    }
+}
+public void displayWinningMessage()
+{
+    //your code here
+  String[][] win = { {"Y", "O", "U"}, {"W", "I", "N"} };
+  for (int i = 0; i < win.length; i++) {
+    for (int j = 0; j < win[i].length; j++) {
+      buttons[i][j].clicked = false;
+      buttons[i][j].flagged = false;
+      buttons[i][j].myLabel = win[i][j];
+    }
+  }
 }
 public boolean isValid(int r, int c)
 {
